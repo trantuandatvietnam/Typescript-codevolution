@@ -481,6 +481,7 @@ export default LoggedIn;
 ```tsx
 // User.tsx
 import { useState } from "react";
+
 type AuthUser = {
   name: string;
   email: string;
@@ -544,6 +545,7 @@ export default User;
 ```
 
 - useReducer Hook
+  (Lưu ý: useReducer khác biệt so với redux ở chỗ nó sẽ tạo ra một giá trị state mới ở những phạm vi khác nhau khi sử dụng ở các nơi khác nhau, tuy nhiên nó có chức năng giống như redux nếu như sử dụng kết hợp với useContext)
 
 ```tsx
 import { useReducer } from "react";
@@ -590,7 +592,7 @@ export const Counter = () => {
 
 - useReducer Strict Action Types
   - Trong ví dụ trên, kiểu dữ liệu của type được định nghĩa là một chuỗi, vậy nên khi chúng ta dispatch một action có type không có trong các trường hợp định nghĩa thì nó sẽ rơi vào case default
-  - Xử lại như sau:
+  - Xử lí như sau:
 
 ```tsx
 import { useReducer } from "react";
@@ -647,7 +649,6 @@ export const Counter = () => {
 - useContext
 
   - Cấu trúc thư mục:
-
     - src
       - context
         - Box.tsx
@@ -886,7 +887,7 @@ const DomRef = () => {
 
 export default DomRef;
 
-// Nếu không sử dụng optional chaining thì code như sau:
+// Nếu không sử dụng optional chaining thì code như sau: (Nếu chắc chắn răng inputRef không bao giờ là null nha)
 import { useEffect, useRef } from "react";
 
 const DomRef = () => {
